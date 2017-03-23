@@ -8,5 +8,12 @@
     <artifactId>jmp-spring-simple</artifactId>
     <version>1.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.6.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>
