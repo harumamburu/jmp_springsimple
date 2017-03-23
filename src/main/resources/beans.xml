@@ -6,4 +6,15 @@
 
     <bean id="dev" class="com.mylab.jmp.spring.simple.beans.Developer"/>
 
+    <bean id="javaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <constructor-arg value="John"/>
+        <constructor-arg value="Java"/>
+        <constructor-arg value="3"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <bean id="intern" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <constructor-arg value="Mike"/>
+    </bean>
+
 </beans>
