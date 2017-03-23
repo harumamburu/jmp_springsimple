@@ -19,6 +19,9 @@ public class Client {
 
         Developer dotNetDeveloper = getDeveloperBean(context, "dotNetDev");
         System.out.println(dotNetDeveloper.toString());
+
+        Developer hacker = getDeveloperBean(context, "hacker");
+        System.out.println(hacker.toString());
     }
 
     private static Developer getDeveloperBean(ApplicationContext context, String id) {

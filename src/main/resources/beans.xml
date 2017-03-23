@@ -24,4 +24,8 @@
         <constructor-arg value="true"/>
     </bean>
 
+    <bean id="hacker" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <constructor-arg type="java.lang.Integer" value="15"/>
+    </bean>
+
 </beans>
