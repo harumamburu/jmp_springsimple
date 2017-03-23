@@ -23,6 +23,8 @@ public class Client {
         Developer hacker = (Developer) getBean(context, "hacker");
 
         Project taxiProject = (Project) getBean(context, "taxiNuvo");
+
+        Project javaProject = (Project) getBean(context, "java10");
     }
 
     private static Object getBean(ApplicationContext context, String id) {

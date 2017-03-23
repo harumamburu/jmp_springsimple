@@ -33,4 +33,9 @@
         <constructor-arg ref="javaDev"/>
     </bean>
 
+    <bean id="java10" name="later" class="com.mylab.jmp.spring.simple.beans.Project">
+        <constructor-arg value="Java 10"/>
+        <property name="lead" ref="javaDev"/>
+    </bean>
+
 </beans>
