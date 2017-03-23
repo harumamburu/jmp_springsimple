@@ -28,4 +28,9 @@
         <constructor-arg type="java.lang.Integer" value="15"/>
     </bean>
 
+    <bean id="taxiProject" name="uberTaxi; taxiNuvo, taxiTax" class="com.mylab.jmp.spring.simple.beans.Project">
+        <constructor-arg value="taxiNuvo"/>
+        <constructor-arg ref="javaDev"/>
+    </bean>
+
 </beans>
