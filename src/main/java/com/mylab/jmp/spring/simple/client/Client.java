@@ -16,6 +16,9 @@ public class Client {
         intern.setSkill("Kotlin");
         intern.setLevel(1);
         System.out.println(intern.toString());
+
+        Developer dotNetDeveloper = getDeveloperBean(context, "dotNetDev");
+        System.out.println(dotNetDeveloper.toString());
     }
 
     private static Developer getDeveloperBean(ApplicationContext context, String id) {

@@ -17,4 +17,11 @@
         <constructor-arg value="Mike"/>
     </bean>
 
+    <bean id="dotNetDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <constructor-arg value="Peter"/>
+        <constructor-arg value="DotNet"/>
+        <constructor-arg value="2"/>
+        <constructor-arg value="true"/>
+    </bean>
+
 </beans>
