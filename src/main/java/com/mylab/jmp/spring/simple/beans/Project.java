@@ -5,9 +5,16 @@ public class Project {
     private String name;
     private Developer lead;
 
+    public Project() {
+    }
+
     public Project(String name, Developer lead) {
         this.name = name;
         this.lead = lead;
+    }
+
+    public Project(String name) {
+        this.name = name;
     }
 
     public String getName() {
