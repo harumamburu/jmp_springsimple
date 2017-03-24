@@ -38,4 +38,18 @@
         <property name="lead" ref="javaDev"/>
     </bean>
 
+    <bean id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <constructor-arg value="Martin"/>
+        <constructor-arg value="Scala"/>
+        <constructor-arg value="10"/>
+        <constructor-arg value="false"/>
+    </bean>
+
+    <bean id="delphiDev" class="com.mylab.jmp.spring.simple.beans.Developer" scope="prototype">
+        <constructor-arg value="Danny"/>
+        <constructor-arg value="Delphi"/>
+        <constructor-arg value="10"/>
+        <constructor-arg value="false"/>
+    </bean>
+
 </beans>

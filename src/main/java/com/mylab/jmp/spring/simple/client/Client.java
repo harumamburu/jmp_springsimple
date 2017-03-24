@@ -22,6 +22,18 @@ public class Client {
         getBean(context, "hacker");
         getBean(context, "taxiNuvo");
         getBean(context, "java10");
+
+        Developer scalaDeveloper = (Developer) getBean(context, "scalaDev");
+        scalaDeveloper.setSkill("Delphi");
+
+        Developer scalaDeveloper2 = (Developer) getBean(context, "scalaDev");
+        System.out.println(scalaDeveloper == scalaDeveloper2);
+
+        Developer delphiDeveloper = (Developer) getBean(context, "delphiDev");
+        scalaDeveloper.setSkill("Scala");
+
+        Developer delphiDeveloper2 = (Developer) getBean(context, "delphiDev");
+        System.out.println(delphiDeveloper == delphiDeveloper2);
     }
 
     private static Object getBean(ApplicationContext context, String id) {
