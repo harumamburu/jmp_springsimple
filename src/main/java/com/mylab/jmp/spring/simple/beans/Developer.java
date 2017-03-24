@@ -8,6 +8,7 @@ public class Developer extends Engineer {
     private boolean isCoffeeConsumer;
 
     public Developer() {
+        System.out.println("A dev-hero was born!");
     }
 
     public Map<String, Integer> getFrameworksExperience() {

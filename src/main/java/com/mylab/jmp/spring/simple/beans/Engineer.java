@@ -1,6 +1,8 @@
 package com.mylab.jmp.spring.simple.beans;
 
-public abstract class Engineer {
+import com.mylab.jmp.spring.simple.Person;
+
+public abstract class Engineer implements Person {
 
     protected String name;
     protected String skill;
@@ -9,6 +11,11 @@ public abstract class Engineer {
     public Engineer() {
     }
 
+    public void engineerInit() {
+        System.out.println(String.format("Engineer %s skilled in %s was hired", name, skill));
+    }
+
+    @Override
     public String getName() {
         return name;
     }

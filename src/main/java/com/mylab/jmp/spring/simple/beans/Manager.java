@@ -1,8 +1,10 @@
 package com.mylab.jmp.spring.simple.beans;
 
+import com.mylab.jmp.spring.simple.Person;
+
 import java.util.Set;
 
-public class Manager {
+public class Manager implements Person {
 
     private String name;
     private Integer emailPerHour;
@@ -11,6 +13,7 @@ public class Manager {
     public Manager() {
     }
 
+    @Override
     public String getName() {
         return name;
     }

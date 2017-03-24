@@ -7,43 +7,9 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-    <bean id="taxiProject" name="uberTaxi; taxiNuvo, taxiTax" class="com.mylab.jmp.spring.simple.beans.Project">
-        <constructor-arg value="taxiNuvo"/>
-        <constructor-arg ref="javaDev"/>
-    </bean>
+    <bean id="engineer" abstract="true" init-method="engineerInit"/>
 
-    <bean id="java10" name="later" class="com.mylab.jmp.spring.simple.beans.Project">
-        <property name="name" value="Java 10"/>
-        <property name="lead" ref="javaDev"/>
-    </bean>
-
-
-    <bean id="dev" class="com.mylab.jmp.spring.simple.beans.Developer"/>
-
-    <bean id="intern" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <property name="name" value="Mike"/>
-    </bean>
-
-    <bean id="dotNetDev" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <property name="name" value="Peter"/>
-        <property name="skill" value="DotNet"/>
-        <property name="level" value="2"/>
-        <property name="isCoffeeConsumer" value="true"/>
-    </bean>
-
-    <bean id="hacker" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <property name="level" value="15"/>
-    </bean>
-
-    <bean id="delphiDev" class="com.mylab.jmp.spring.simple.beans.Developer" scope="prototype">
-        <property name="name" value="Danny"/>
-        <property name="skill" value="Delphi"/>
-        <property name="level" value="10"/>
-        <property name="isCoffeeConsumer" value="false"/>
-    </bean>
-
-
-    <bean id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+    <bean parent="engineer" id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
         <property name="name" value="Martin"/>
         <property name="skill" value="Scala"/>
         <property name="level" value="10"/>
@@ -57,7 +23,7 @@
         </property>
     </bean>
 
-    <bean id="javaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+    <bean parent="engineer" id="javaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
         <property name="name" value="John"/>
         <property name="skill" value="Java"/>
         <property name="level" value="3"/>
@@ -71,7 +37,7 @@
         </property>
     </bean>
 
-    <bean id="autoTester" class="com.mylab.jmp.spring.simple.beans.AutomationTester">
+    <bean parent="engineer" id="autoTester" class="com.mylab.jmp.spring.simple.beans.AutomationTester">
         <property name="name" value="Uladzimir"/>
         <property name="skill" value="Python"/>
         <property name="level" value="2"/>
@@ -93,6 +59,18 @@
         <property name="pool">
             <ref bean="team"/>
         </property>
+    </bean>
+
+    <bean id="magazine" class="com.mylab.jmp.spring.simple.beans.Project" init-method="initProject">
+        <constructor-arg value="Vogue"/>
+        <constructor-arg>
+            <list>
+                <ref bean="scalaDev"/>
+                <ref bean="javaDev"/>
+                <ref bean="autoTester"/>
+                <ref bean="manager"/>
+            </list>
+        </constructor-arg>
     </bean>
 
 </beans>

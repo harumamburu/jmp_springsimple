@@ -1,20 +1,25 @@
 package com.mylab.jmp.spring.simple.beans;
 
+import com.mylab.jmp.spring.simple.Person;
+
+import java.util.List;
+
 public class Project {
 
     private String name;
-    private Developer lead;
+    private List<Person> staff;
 
     public Project() {
     }
 
-    public Project(String name, Developer lead) {
+    public Project(String name, List<Person> staff) {
         this.name = name;
-        this.lead = lead;
+        this.staff = staff;
+        System.out.println(String.format("Project %s was created", name));
     }
 
-    public Project(String name) {
-        this.name = name;
+    public void initProject() {
+        System.out.println("Check budgeting for " + staff.size() + " engineers");
     }
 
     public String getName() {
@@ -25,19 +30,19 @@ public class Project {
         this.name = name;
     }
 
-    public Developer getLead() {
-        return lead;
+    public List<Person> getStaff() {
+        return staff;
     }
 
-    public void setLead(Developer lead) {
-        this.lead = lead;
+    public void setStaff(List<Person> staff) {
+        this.staff = staff;
     }
 
     @Override
     public String toString() {
         return "Project{" +
                 "name='" + name + '\'' +
-                ", lead=" + lead +
+                ", staff=" + staff +
                 '}';
     }
 }
