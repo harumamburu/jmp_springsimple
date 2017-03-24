@@ -1,6 +1,7 @@
 package com.mylab.jmp.spring.simple.client;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Client {
@@ -9,6 +10,8 @@ public class Client {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         getBean(context, "magazine");
+
+        ((AbstractApplicationContext) context).close();
     }
 
     private static Object getBean(ApplicationContext context, String id) {
