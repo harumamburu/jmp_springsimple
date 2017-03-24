@@ -4,7 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
 
-public class AnotherPostProcessor implements BeanPostProcessor {
+public class AnotherPostProcessor implements BeanPostProcessor, Ordered{
 
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
@@ -16,5 +16,10 @@ public class AnotherPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
         System.out.println("Bean " + s + " was initialized with some humble help of AnotherPostProcessor");
         return o;
+    }
+
+    @Override
+    public int getOrder() {
+        return Integer.MAX_VALUE;
     }
 }
