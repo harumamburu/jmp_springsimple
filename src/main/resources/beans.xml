@@ -4,52 +4,54 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="dev" class="com.mylab.jmp.spring.simple.beans.Developer"/>
-
-    <bean id="javaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <constructor-arg value="John"/>
-        <constructor-arg value="Java"/>
-        <constructor-arg value="3"/>
-        <constructor-arg value="true"/>
-    </bean>
-
-    <bean id="intern" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <constructor-arg value="Mike"/>
-    </bean>
-
-    <bean id="dotNetDev" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <constructor-arg value="Peter"/>
-        <constructor-arg value="DotNet"/>
-        <constructor-arg value="2"/>
-        <constructor-arg value="true"/>
-    </bean>
-
-    <bean id="hacker" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <constructor-arg type="java.lang.Integer" value="15"/>
-    </bean>
-
     <bean id="taxiProject" name="uberTaxi; taxiNuvo, taxiTax" class="com.mylab.jmp.spring.simple.beans.Project">
         <constructor-arg value="taxiNuvo"/>
         <constructor-arg ref="javaDev"/>
     </bean>
 
     <bean id="java10" name="later" class="com.mylab.jmp.spring.simple.beans.Project">
-        <constructor-arg value="Java 10"/>
+        <property name="name" value="Java 10"/>
         <property name="lead" ref="javaDev"/>
     </bean>
 
-    <bean id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
-        <constructor-arg value="Martin"/>
-        <constructor-arg value="Scala"/>
-        <constructor-arg value="10"/>
-        <constructor-arg value="false"/>
+
+    <bean id="dev" class="com.mylab.jmp.spring.simple.beans.Developer"/>
+
+    <bean id="intern" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <property name="name" value="Mike"/>
+    </bean>
+
+    <bean id="dotNetDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <property name="name" value="Peter"/>
+        <property name="skill" value="DotNet"/>
+        <property name="level" value="2"/>
+        <property name="isCoffeeConsumer" value="true"/>
+    </bean>
+
+    <bean id="hacker" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <property name="level" value="15"/>
     </bean>
 
     <bean id="delphiDev" class="com.mylab.jmp.spring.simple.beans.Developer" scope="prototype">
-        <constructor-arg value="Danny"/>
-        <constructor-arg value="Delphi"/>
-        <constructor-arg value="10"/>
-        <constructor-arg value="false"/>
+        <property name="name" value="Danny"/>
+        <property name="skill" value="Delphi"/>
+        <property name="level" value="10"/>
+        <property name="isCoffeeConsumer" value="false"/>
+    </bean>
+
+
+    <bean id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <property name="name" value="Martin"/>
+        <property name="skill" value="Scala"/>
+        <property name="level" value="10"/>
+        <property name="isCoffeeConsumer" value="false"/>
+    </bean>
+
+    <bean id="javaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
+        <property name="name" value="John"/>
+        <property name="skill" value="Java"/>
+        <property name="level" value="3"/>
+        <property name="isCoffeeConsumer" value="true"/>
     </bean>
 
 </beans>

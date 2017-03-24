@@ -1,59 +1,28 @@
 package com.mylab.jmp.spring.simple.beans;
 
-public class Developer {
+import java.util.Map;
 
-    private String name;
-    private String skill;
-    private Integer level;
+public class Developer extends Engineer {
+
+    private Map<String, Integer> frameworksExperience;
     private boolean isCoffeeConsumer;
 
     public Developer() {
     }
 
-    public Developer(String name, String skill, Integer level, boolean isCoffeeConsumer) {
-        this.name = name;
-        this.skill = skill;
-        this.level = level;
-        this.isCoffeeConsumer = isCoffeeConsumer;
+    public Map<String, Integer> getFrameworksExperience() {
+        return frameworksExperience;
     }
 
-    public Developer(String name) {
-        this.name = name;
-    }
-
-    public Developer(Integer level) {
-        this.level = level;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSkill() {
-        return skill;
-    }
-
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setFrameworksExperience(Map<String, Integer> frameworksExperience) {
+        this.frameworksExperience = frameworksExperience;
     }
 
     public boolean isCoffeeConsumer() {
         return isCoffeeConsumer;
     }
 
-    public void setCoffeeConsumer(boolean coffeeConsumer) {
+    public void setIsCoffeeConsumer(boolean coffeeConsumer) {
         isCoffeeConsumer = coffeeConsumer;
     }
 
@@ -63,6 +32,7 @@ public class Developer {
                 "name='" + name + '\'' +
                 ", skill='" + skill + '\'' +
                 ", level=" + level +
+                ", frameworksExperience=" + frameworksExperience +
                 ", isCoffeeConsumer=" + isCoffeeConsumer +
                 '}';
     }
