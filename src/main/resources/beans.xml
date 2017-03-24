@@ -9,7 +9,7 @@
 
     <bean id="initializer" class="com.mylab.jmp.spring.simple.beans.util.BeanInitializer"/>
 
-    <bean id="engineer" abstract="true" init-method="engineerInit"/>
+    <bean id="engineer" abstract="true" init-method="engineerInit" destroy-method="engineerDestroy"/>
 
     <bean parent="engineer" id="scalaDev" class="com.mylab.jmp.spring.simple.beans.Developer">
         <property name="name" value="Martin"/>
@@ -80,5 +80,7 @@
 
     <bean id="postProcessor2" class="com.mylab.jmp.spring.simple.beans.util.AnotherPostProcessor"/>
     <bean id="postProcessor" class="com.mylab.jmp.spring.simple.beans.util.PostProcessor"/>
+
+    <bean id="destroyer" class="com.mylab.jmp.spring.simple.beans.util.BeanDestroyer"/>
 
 </beans>

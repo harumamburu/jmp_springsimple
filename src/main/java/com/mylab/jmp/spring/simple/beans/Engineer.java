@@ -15,6 +15,10 @@ public abstract class Engineer implements Person {
         System.out.println(String.format("Engineer %s skilled in %s was hired", name, skill));
     }
 
+    public void engineerDestroy() {
+        System.out.println(String.format("Engineer %s skilled in %s was fired", name, skill));
+    }
+
     @Override
     public String getName() {
         return name;
