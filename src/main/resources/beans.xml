@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
     <bean id="taxiProject" name="uberTaxi; taxiNuvo, taxiTax" class="com.mylab.jmp.spring.simple.beans.Project">
         <constructor-arg value="taxiNuvo"/>
@@ -76,15 +79,19 @@
         <property name="isBro" value="true"/>
     </bean>
 
+    <util:set id="team">
+        <ref bean="javaDev"/>
+        <ref bean="scalaDev"/>
+        <ref bean="autoTester"/>
+    </util:set>
+
     <bean id="manager" class="com.mylab.jmp.spring.simple.beans.Manager">
         <property name="name" value="Dan"/>
-        <property name="emailPerHour" value="1000"/>
+        <property name="emailPerHour">
+            <util:constant static-field="java.lang.Math.PI"/>
+        </property>
         <property name="pool">
-            <set>
-                <ref bean="javaDev"/>
-                <ref bean="scalaDev"/>
-                <ref bean="autoTester"/>
-            </set>
+            <ref bean="team"/>
         </property>
     </bean>
 
