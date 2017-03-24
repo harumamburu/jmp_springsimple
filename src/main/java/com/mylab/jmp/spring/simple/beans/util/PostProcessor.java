@@ -1,10 +1,10 @@
 package com.mylab.jmp.spring.simple.beans.util;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
 import org.springframework.core.Ordered;
 
-public class PostProcessor implements BeanPostProcessor, Ordered {
+public class PostProcessor implements DestructionAwareBeanPostProcessor, Ordered {
 
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
@@ -21,5 +21,15 @@ public class PostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public int getOrder() {
         return Integer.MIN_VALUE;
+    }
+
+    @Override
+    public void postProcessBeforeDestruction(Object o, String s) throws BeansException {
+        System.out.println("Bean " + s + " to be DESTROYED!!! ");
+    }
+
+    @Override
+    public boolean requiresDestruction(Object o) {
+        return true;
     }
 }
