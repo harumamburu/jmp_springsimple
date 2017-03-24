@@ -1,6 +1,7 @@
 package com.mylab.jmp.spring.simple.client;
 
 import com.mylab.jmp.spring.simple.beans.Developer;
+import com.mylab.jmp.spring.simple.beans.Manager;
 import com.mylab.jmp.spring.simple.beans.Project;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -37,6 +38,8 @@ public class Client {
         Developer scalaDeveloperSameAs1 = (Developer) getBean(context2, "scalaDev");
         System.out.println(scalaDeveloper.toString());
         System.out.println(String.format("is same object = %b", scalaDeveloper == scalaDeveloperSameAs1));
+
+        getBean(context, "manager");
     }
 
     private static Object getBean(ApplicationContext context, String id) {

@@ -20,7 +20,7 @@ public class AutomationTester extends Engineer {
         return isBro;
     }
 
-    public void setBro(boolean bro) {
+    public void setIsBro(boolean bro) {
         isBro = bro;
     }
 
