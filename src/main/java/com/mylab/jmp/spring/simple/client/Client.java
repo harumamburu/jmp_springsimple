@@ -25,15 +25,18 @@ public class Client {
 
         Developer scalaDeveloper = (Developer) getBean(context, "scalaDev");
         scalaDeveloper.setSkill("Delphi");
-
         Developer scalaDeveloper2 = (Developer) getBean(context, "scalaDev");
-        System.out.println(scalaDeveloper == scalaDeveloper2);
+        System.out.println(String.format("is same object = %b", scalaDeveloper == scalaDeveloper2));
 
         Developer delphiDeveloper = (Developer) getBean(context, "delphiDev");
         scalaDeveloper.setSkill("Scala");
-
         Developer delphiDeveloper2 = (Developer) getBean(context, "delphiDev");
-        System.out.println(delphiDeveloper == delphiDeveloper2);
+        System.out.println(String.format("is same object = %b", delphiDeveloper == delphiDeveloper2));
+
+        ApplicationContext context2 = new ClassPathXmlApplicationContext("beans.xml");
+        Developer scalaDeveloperSameAs1 = (Developer) getBean(context2, "scalaDev");
+        System.out.println(scalaDeveloper.toString());
+        System.out.println(String.format("is same object = %b", scalaDeveloper == scalaDeveloperSameAs1));
     }
 
     private static Object getBean(ApplicationContext context, String id) {
