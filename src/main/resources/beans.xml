@@ -78,4 +78,6 @@
     <!-- whem the oder matters -->
     <bean id="initializer2" class="com.mylab.jmp.spring.simple.beans.util.BeanInitializer"/>
 
+    <bean id="postProcessor" class="com.mylab.jmp.spring.simple.beans.util.PostProcessor"/>
+
 </beans>
